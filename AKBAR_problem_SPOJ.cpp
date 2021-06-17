@@ -42,7 +42,7 @@ void solve(){
       for(int i=0;i<=n;i++) visited[i] = false;
    }
    for(int i=1;i<=n;i++){
-    if(Protected[i]>1){
+    if(Protected[i]>1||Protected[i]==0){
       cout << "No";
       return;
     }
