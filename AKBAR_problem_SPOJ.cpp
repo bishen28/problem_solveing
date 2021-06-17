@@ -57,10 +57,6 @@ int main(){
     cin.tie(0) ; cout.tie(0) ;
     cout.precision(20);
 
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    #endif 
     int T;cin>>T;
     while(T--){
      solve();if(T)cout << "\n";
