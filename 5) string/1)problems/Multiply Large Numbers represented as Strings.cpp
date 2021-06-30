@@ -2,7 +2,7 @@
 #include <bits/stdc++.h> 
 using namespace std; 
 
-void multiply(string s1, string s2){
+    string multiply(string &s1, string &s2){
     
     int l1 = s1.length();
     int l2 = s2.length();
@@ -42,14 +42,47 @@ void multiply(string s1, string s2){
      //cout << endl;
      r1--;
     }
-      int f = 1;   
+      int f = 1; 
+      string str;
     for(auto x:vec){
-        if(x==0&&f)continue;
-       cout << x;f=0;
+         if(x==0&&f)continue;
+         //cout << x;
+         f=0;
+         str+=to_string(x);
     }
-    if(f==1) cout << 0;
-    
+    if(f==1){
+        return "0";
+        //cout << 0;
+    } 
+    return str;
 }
+    
+    
+    
+    
+    string multiplyStrings(string s1, string s2) {
+        int f1 = 0, f2 = 0;
+        if(s1[0]=='-'){
+             reverse(s1.begin(),s1.end());
+             s1.pop_back();
+             reverse(s1.begin(),s1.end());
+             f1 = 1;
+        }
+        if(s2[0]=='-'){
+            reverse(s2.begin(),s2.end());
+             s2.pop_back();
+             reverse(s2.begin(),s2.end());
+             f2 = 1;
+        }
+        string str = multiply(s1,s2);
+        if(f1&&f2||(!f1&&!f2)){
+            return str;
+        }else{
+            if(str.length()==1&&str[0]=='0') return "0";
+            return "-"+ multiply(s1,s2);
+        }
+       
+    }
 
 
 int main(){ 
