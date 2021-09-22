@@ -7,7 +7,7 @@ using namespace std;
 typedef long long               ll;
 ll a,b,k;
 string ans;
-ll dp[100][100];
+ll dp[105][105];
 
 ll fact(ll a, ll b){
     return dp[a+b][b];
